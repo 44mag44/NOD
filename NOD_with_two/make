@@ -1,0 +1,2 @@
+all:
+	gcc -Wall -g -o run.out main.c decomposition_number.c
