@@ -6,6 +6,7 @@ int func(int a,int b)
 {
 	int nod=1;
 	a=0,b=0;
+
 	printf("Введите число a: ");
 	scanf("%d", &a);
 	printf("Введите число b: ");
@@ -18,7 +19,7 @@ int func(int a,int b)
 		b=temp;
 	}
 
-	while(a>1 && b> 1)
+	while(a>1 && b>1)
 	{
 		for(int i=2; i<=a; i++)
 		{
@@ -41,9 +42,11 @@ int func(int a,int b)
 			}
 		}
 	}
+
 	return nod;
 }
-// составные и простые числа
+
+// НОД
 void NOD()
 {
 	int a=0,b=0;

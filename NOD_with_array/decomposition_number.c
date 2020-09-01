@@ -13,8 +13,10 @@ int func(int num)
 
 	printf("Введите кол-во цифр : ");
 	scanf("%d", &num);
+
 	if(num>SIZE)
 		return 0;
+
 	for(int i=0; i<num; i++)
 	{
 		printf("Введите число: ");
@@ -40,7 +42,8 @@ int func(int num)
 
 	return nod;
 }
-// составные и простые числа
+
+// НОД
 void NOD()
 {
 	int num=0;

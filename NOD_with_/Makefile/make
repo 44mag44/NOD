@@ -1,2 +1,2 @@
 all: 
-	gcc -Wall -g -o run.out main.c save_array_number.c save_array_simple.c
+	gcc -Wall -g -o run.out main.c save_array_number.c save_array_simple.c search_simple.c

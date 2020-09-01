@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <malloc.h>
 
-int array_number() // массив чисел
+int array_number(int count) // массив чисел
 {
 	// для записи данных в файл
 	FILE *file_numbers;
@@ -16,21 +16,15 @@ int array_number() // массив чисел
 		return 0;	
 	}
 
-	int count=0;	// кол-во цифр
-	int *array_number;	// массив цифр
-
-	// ввод кол-ва цифр
-	printf("Введите кол-во цифр для нахождения НОД: ");
-	scanf("%d", &count);		
+	// выделение памяти под массив цифр
+	int *array_number;
+	array_number=(int*)malloc(count*sizeof(int));
 
 	if(count<=0)
 	{
-		perror("ERROR NULL");
+		perror("ERROR: count <= 0");
 		exit(0);
 	}
-
-	// выделение памяти под массив: array_number[]
-	array_number=(int*)malloc(count*sizeof(int));
 
 	// запись множества чисел в файл
 	for(int i=0; i<count; i++)
@@ -42,18 +36,14 @@ int array_number() // массив чисел
 
 	// вывод множества чисел на терминал
 	printf("\nЗаписано в \"%s\": ", name_file);
-
 	for(int i=0; i<count; i++)
-	{
-		fscanf(file_numbers, "%d", &array_number[i]);	
 		printf(" %d ", array_number[i]);
-	}
 	printf("\n");
 
-	// закрыть файл
-	fclose(file_numbers);
 	// осфобождение памяти: *array_number
 	free(array_number);
+	// закрыть файл
+	fclose(file_numbers);
 	
-	return 0;
+	return count;
 }

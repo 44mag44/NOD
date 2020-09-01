@@ -1,4 +1,4 @@
-/*SAVE_ARRAY_SIMPLE_H */
+/*SAVE_ARRAY_SIMPLE_C */
 
 #include <stdio.h>
 
@@ -38,17 +38,17 @@ int array_simple()
 		{
 			for(; var%simple==0; var/=simple)
 			{
-				printf("%d ", simple);
 				fprintf(file_simple, "%d ", simple);
+				printf("%d ", simple);
 			}
 		}
-		simple=2;
+		simple=2; // снова станет двойной
 		fprintf(file_simple, "\n");
   	}
 
-	// закрыть файл
-	fclose(file_numbers);
+	// закрыть файлы
 	fclose(file_simple);
+	fclose(file_numbers);
 
-	return var;
+	return simple;
 }

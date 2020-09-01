@@ -12,6 +12,7 @@ int selection_sort(int *arr)
 	int len;
 	len=length(arr);
 	int i, j, min, tmp;
+
 	for(i=0; i<len-1; i++)
 	{
 		min=i;
@@ -27,3 +28,4 @@ int selection_sort(int *arr)
 
 	return len;
 }
+
